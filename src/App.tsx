@@ -1,5 +1,6 @@
 import { cn } from 'cn';
 import Hero from './components/section/hero';
+import Couple from './components/section/couple';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       )}
     >
       <Hero />
-      <section id='couple-photo-first' className='relative z-20'>
-        Couple Photo 1
+      <Couple />
+      <section id='events' className='relative z-20'>
+        Events
       </section>
       <section id='media' className='relative z-20'>
         Media
@@ -22,9 +24,6 @@ function App() {
       </section>
       <section id='timeline' className='relative z-20'>
         Timeline
-      </section>
-      <section id='events' className='relative z-20'>
-        Events
       </section>
       <section id='rsvp' className='relative z-20'>
         RSVP

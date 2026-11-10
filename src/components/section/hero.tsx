@@ -29,7 +29,7 @@ export default function Hero() {
         className='font-monte-carlo flex w-full justify-center gap-6 text-7xl'
       >
         <span>T</span>
-        <hr className='ml-2 h-auto border-l border-gray-300' />
+        <hr className='ml-2 h-auto border-l-2 border-gray-300' />
         <span>N</span>
       </div>
     </section>
