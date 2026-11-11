@@ -18,7 +18,7 @@ export default function Couple() {
           <span className='font-bold'>Calon Mempelai</span>
         </div>
       </div>
-      <div className='font-monte-carlo flex flex-col items-center justify-center gap-6 text-7xl [anchor-name:--anchor-couple]'>
+      <div className='font-monte-carlo flex flex-col items-center justify-center gap-12 text-7xl [anchor-name:--anchor-couple]'>
         <span className='-translate-x-1/2'>Tanu</span>
         <span className='font-roboto-serif text-2xl'>&</span>
         <span className='translate-x-1/2'>Nur</span>

@@ -1,6 +1,7 @@
 import { cn } from 'cn';
 import Hero from './components/section/hero';
 import Couple from './components/section/couple';
+import Events from './components/section/events';
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
     >
       <Hero />
       <Couple />
-      <section id='events' className='relative z-20'>
-        Events
-      </section>
+      <Events />
       <section id='media' className='relative z-20'>
         Media
       </section>
