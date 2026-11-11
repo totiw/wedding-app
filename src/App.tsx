@@ -2,6 +2,7 @@ import { cn } from 'cn';
 import Hero from './components/section/hero';
 import Couple from './components/section/couple';
 import Events from './components/section/events';
+import Media from './components/section/media';
 
 function App() {
   return (
@@ -15,9 +16,7 @@ function App() {
       <Hero />
       <Couple />
       <Events />
-      <section id='media' className='relative z-20'>
-        Media
-      </section>
+      <Media />
       <section id='couple-photo-second' className='relative z-20'>
         Couple Photo 2
       </section>

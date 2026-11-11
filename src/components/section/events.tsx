@@ -18,7 +18,7 @@ export default function Events() {
     { label: 'Detik', value: seconds },
   ];
   return (
-    <section id='events' className='relative z-20 flex flex-col gap-12'>
+    <section id='events' className='relative z-20 flex flex-col gap-20 py-12'>
       <div className='flex flex-col'>
         <span className='text-center'>Desember</span>
         <div className='m-auto flex w-4/5 items-center justify-evenly'>

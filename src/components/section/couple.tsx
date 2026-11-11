@@ -6,7 +6,7 @@ export default function Couple() {
       <div className='flex h-dvh flex-col'>
         <div
           className={cn(
-            'h-[80%] bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
+            'h-[80%] w-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
             'mask-[url(/src/assets/ripped1.webp)] mask-center mask-no-repeat'
           )}
         />
