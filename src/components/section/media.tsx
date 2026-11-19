@@ -57,7 +57,7 @@ export default function Media() {
         {/* COVER IMAGE */}
         <div
           onClick={togglePlay}
-          className='mx-auto box-border flex h-40 w-40 rounded-full bg-[#578FCA] p-4'
+          className='bg-primary mx-auto box-border flex h-40 w-40 rounded-full p-4'
         >
           <img
             src='/src/assets/bgm-cover.jpeg'
@@ -84,7 +84,7 @@ export default function Media() {
             step={1}
             className={cn(
               'mx-auto',
-              '**:data-[slot=slider-range]:bg-[#578FCA] **:data-[slot=slider-thumb]:border-none **:data-[slot=slider-thumb]:bg-[#578FCA] **:data-[slot=slider-track]:bg-[#A1E3F9]'
+              '**:data-[slot=slider-range]:bg-primary **:data-[slot=slider-thumb]:bg-primary **:data-[slot=slider-track]:bg-secondary **:data-[slot=slider-thumb]:border-none'
             )}
           />
           <span>{formatTime(duration)}</span>
@@ -104,7 +104,7 @@ export default function Media() {
             <Button onClick={handleBackward} className='' variant='link' size='icon'>
               <SkipBack />
             </Button>
-            <Button onClick={togglePlay} className='rounded-full bg-[#578FCA]' size='icon'>
+            <Button onClick={togglePlay} className='bg-primary rounded-full' size='icon'>
               {isPlaying ? <Pause /> : <Play />}
             </Button>
             <Button onClick={handleForward} className='' variant='link' size='icon'>

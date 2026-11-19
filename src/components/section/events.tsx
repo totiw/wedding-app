@@ -22,11 +22,9 @@ export default function Events() {
       <div className='flex flex-col'>
         <span className='text-center'>Desember</span>
         <div className='m-auto flex w-4/5 items-center justify-evenly'>
-          <span className='flex-1 border-y-2 border-[#578FCA] text-center leading-loose'>
-            Sabtu
-          </span>
-          <span className='font-monte-carlo flex-1 text-center text-6xl text-[#578FCA]'>12</span>
-          <span className='flex-1 border-y-2 border-[#578FCA] text-center leading-loose'>2026</span>
+          <span className='border-primary flex-1 border-y-2 text-center leading-loose'>Sabtu</span>
+          <span className='font-monte-carlo text-primary flex-1 text-center text-6xl'>12</span>
+          <span className='border-primary flex-1 border-y-2 text-center leading-loose'>2026</span>
         </div>
       </div>
       <div className='flex flex-col gap-4'>
@@ -36,9 +34,7 @@ export default function Events() {
             <Fragment key={typeof item !== 'string' ? item.label : idx}>
               {typeof item !== 'string' ? (
                 <div className='text-center'>
-                  <div className='text-5xl text-[#578FCA]'>
-                    {String(item.value).padStart(2, '0')}
-                  </div>
+                  <div className='text-primary text-5xl'>{String(item.value).padStart(2, '0')}</div>
                   <div className='text-sm text-gray-500'>{item.label}</div>
                 </div>
               ) : (

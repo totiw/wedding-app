@@ -26,7 +26,7 @@ const timeline = [
 
 export default function Timeline() {
   return (
-    <section id='timeline' className='relative z-20'>
+    <section id='timeline' className='relative z-30'>
       <div className='h-[80dvh]'>
         <div
           className={cn(
@@ -46,7 +46,7 @@ export default function Timeline() {
         <span className='font-bold'>Susunan Acara</span>
         <img src='/src/assets/wedding.svg' alt='wedding illustration' className='h-40 w-40' />
         <div className='relative grid flex-1 grid-cols-1'>
-          <div className='absolute top-12 bottom-12 left-1/2 w-0.5 -translate-x-1/2 border-r-2 border-dashed bg-[#578FCA]' />
+          <div className='bg-primary absolute top-12 bottom-12 left-1/2 w-0.5 -translate-x-1/2 border-r-2 border-dashed' />
           {timeline.map((tl, idx) => {
             const isLeft = idx % 2 === 0;
             return (
@@ -63,8 +63,8 @@ export default function Timeline() {
                   )}
                 </div>
                 <div className='relative z-10 flex items-center justify-center'>
-                  <span className='rounded-full border border-[#578FCA] bg-white p-2'>
-                    <tl.icon className='text-[#578FCA]' />
+                  <span className='border-primary rounded-full border bg-white p-2'>
+                    <tl.icon className='text-primary' />
                   </span>
                 </div>
                 <div className='flex flex-col items-start'>
@@ -80,7 +80,7 @@ export default function Timeline() {
           })}
         </div>
       </div>
-      <div className='flex justify-end'>
+      <div className='relative z-10 flex justify-end'>
         <img
           src='/src/assets/flower1.png'
           alt='Flower Image'

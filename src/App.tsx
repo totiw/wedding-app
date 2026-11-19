@@ -4,6 +4,7 @@ import Couple from './components/section/couple';
 import Events from './components/section/events';
 import Media from './components/section/media';
 import Timeline from './components/section/timeline';
+import Rsvp from './components/section/rsvp';
 
 function App() {
   return (
@@ -19,12 +20,7 @@ function App() {
       <Events />
       <Media />
       <Timeline />
-      <section id='rsvp' className='relative z-20'>
-        RSVP
-      </section>
-      <section id='couple-photo-third' className='relative z-20'>
-        Couple Photo 3
-      </section>
+      <Rsvp />
       <section id='maps' className='relative z-20'>
         Maps
       </section>
