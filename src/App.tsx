@@ -3,6 +3,7 @@ import Hero from './components/section/hero';
 import Couple from './components/section/couple';
 import Events from './components/section/events';
 import Media from './components/section/media';
+import Timeline from './components/section/timeline';
 
 function App() {
   return (
@@ -17,12 +18,7 @@ function App() {
       <Couple />
       <Events />
       <Media />
-      <section id='couple-photo-second' className='relative z-20'>
-        Couple Photo 2
-      </section>
-      <section id='timeline' className='relative z-20'>
-        Timeline
-      </section>
+      <Timeline />
       <section id='rsvp' className='relative z-20'>
         RSVP
       </section>
