@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id='hero'
-      className='relative z-20 flex flex-col items-center justify-center gap-6 p-4'
+      className='relative z-20 flex flex-col items-center justify-center gap-6 rounded-lg'
     >
       <div className='flex'>
         <img
@@ -26,7 +26,7 @@ export default function Hero() {
       <span className='mb-6 font-bold'>[QS. Ar-Rum: 21]</span>
       <div
         id='couple-initial'
-        className='font-monte-carlo flex w-full justify-center gap-6 text-7xl'
+        className='font-monte-carlo flex w-full justify-center gap-6 pb-4 text-7xl'
       >
         <span>T</span>
         <hr className='ml-2 h-auto border-l-2 border-gray-300' />

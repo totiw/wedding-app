@@ -27,23 +27,24 @@ const timeline = [
 export default function Timeline() {
   return (
     <section id='timeline' className='relative z-30'>
-      <div className='h-[80dvh]'>
+      <div className='h-125'>
         <div
           className={cn(
-            'h-full w-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
-            'mask-[url(/src/assets/ripped1.webp)] mask-center mask-no-repeat'
+            'h-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
+            'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
           )}
         />
       </div>
-      <div className='relative z-10 -mt-8'>
+      <div className='relative z-10'>
         <img
           src='/src/assets/flower1.png'
           alt='Flower Image'
           className='w-1/3 self-start object-contain'
         />
       </div>
-      <div className='flex min-h-[80dvh] flex-col items-center'>
-        <span className='font-bold'>Susunan Acara</span>
+      <div className='flex min-h-[80vh] flex-col items-center'>
+        <span className='text-primary font-monte-carlo text-5xl font-semibold'>Susunan Acara</span>
+        <span className='font-semibold'>Pernikahan</span>
         <img src='/src/assets/wedding.svg' alt='wedding illustration' className='h-40 w-40' />
         <div className='relative grid flex-1 grid-cols-1'>
           <div className='bg-primary absolute top-12 bottom-12 left-1/2 w-0.5 -translate-x-1/2 border-r-2 border-dashed' />
@@ -54,7 +55,7 @@ export default function Timeline() {
                 key={tl.name}
                 className={cn('grid grid-cols-3 place-content-stretch items-center gap-4')}
               >
-                <div className='flex flex-col items-end'>
+                <div className='flex flex-col items-end font-semibold'>
                   {!isLeft && (
                     <>
                       <span>{tl.name}</span>
@@ -67,7 +68,7 @@ export default function Timeline() {
                     <tl.icon className='text-primary' />
                   </span>
                 </div>
-                <div className='flex flex-col items-start'>
+                <div className='flex flex-col items-start font-semibold'>
                   {isLeft && (
                     <>
                       <span>{tl.name}</span>

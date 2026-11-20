@@ -3,15 +3,19 @@ import { cn } from 'cn';
 export default function Couple() {
   return (
     <section id='couple-photo-first' className='relative z-20 space-y-12'>
-      <div className='flex h-dvh flex-col'>
-        <div
-          className={cn(
-            'h-full w-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
-            'mask-[url(/src/assets/ripped1.webp)] mask-center mask-no-repeat'
-          )}
-        />
+      <div className='flex h-screen flex-col'>
+        <div className='h-125'>
+          <div
+            className={cn(
+              'h-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
+              'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
+            )}
+          />
+        </div>
         <div className='flex flex-1 flex-col items-center justify-center gap-4'>
-          <span className='font-monte-carlo text-2xl font-bold'>Bismillahirrahmanirrahim</span>
+          <span className='font-monte-carlo text-primary text-3xl font-semibold'>
+            Bismillahirrahmanirrahim
+          </span>
           <p className='flex items-center justify-center p-4 text-center text-sm'>
             Dengan ini kami mengundang bapak dan ibu untuk hadir dalam acara pernikahan kami.
           </p>
