@@ -4,8 +4,10 @@ export default function Maps() {
   return (
     <section id='maps' className='relative z-20'>
       <div className='flex w-full flex-col items-center gap-12 px-4'>
-        <span className='font-monte-carlo text-primary text-5xl font-semibold'>Peta Lokasi</span>
-        <span className='font-semibold'>Rumah mempelai wanita</span>
+        <div className='flex flex-col gap-4'>
+          <span className='font-monte-carlo text-primary text-5xl font-semibold'>Peta Lokasi</span>
+          <span className='font-semibold'>Rumah mempelai wanita</span>
+        </div>
         <p className='w-80 text-center'>Scan kode QR berikut untuk akses lebih cepat</p>
         <div className='h-40 w-40 rounded-md border-2 bg-white p-2'>
           <QRCode value='https://maps.app.goo.gl/jv9ArhLjfVfwoccVA' className='h-full w-full' />

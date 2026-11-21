@@ -1,5 +1,5 @@
 import { Fragment } from 'react/jsx-runtime';
-import { useCountdown } from '../../hooks/useCountdown';
+import { useCountdown } from '@/hooks/useCountdown';
 
 interface CountDownItem {
   label: string;

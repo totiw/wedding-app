@@ -30,12 +30,12 @@ export default function Timeline() {
       <div className='h-125'>
         <div
           className={cn(
-            'h-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
+            'h-full w-full bg-[url(/src/assets/couple2.webp)] bg-cover bg-center bg-no-repeat',
             'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
           )}
         />
       </div>
-      <div className='relative z-10'>
+      <div className='relative z-10 -mt-8'>
         <img
           src='/src/assets/flower1.png'
           alt='Flower Image'

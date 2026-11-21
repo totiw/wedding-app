@@ -7,11 +7,11 @@ import { Button } from '../ui/button';
 export default function Rsvp() {
   return (
     <section id='rsvp' className='relative z-20'>
-      <div className='-mt-8 h-[80vh]'>
+      <div className='h-125'>
         <div
           className={cn(
             'h-full w-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
-            'mask-[url(/src/assets/ripped1.webp)] mask-center mask-no-repeat'
+            'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
           )}
         />
       </div>
