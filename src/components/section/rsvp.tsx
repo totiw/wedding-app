@@ -3,24 +3,27 @@ import { Field, FieldLabel } from '../ui/field';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
+import Couple1 from '@/assets/couple1.webp';
+import Ripped1 from '@/assets/ripped1.webp';
+import Flower1 from '@/assets/flower1.png';
 
 export default function Rsvp() {
   return (
     <section id='rsvp' className='relative z-20'>
       <div className='h-125'>
         <div
+          style={{
+            backgroundImage: `url(${Couple1})`,
+            maskImage: `url(${Ripped1})`,
+          }}
           className={cn(
-            'h-full w-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
-            'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
+            'h-full w-full bg-cover bg-center bg-no-repeat',
+            'mask-cover mask-center mask-no-repeat'
           )}
         />
       </div>
       <div className='relative z-10 -mt-8'>
-        <img
-          src='/src/assets/flower1.png'
-          alt='Flower Image'
-          className='w-1/3 self-start object-contain'
-        />
+        <img src={Flower1} alt='Flower Image' className='w-1/3 self-start object-contain' />
       </div>
       <div className='flex flex-col gap-4 py-12'>
         <span className='text-primary font-monte-carlo self-center text-5xl font-semibold'>
@@ -73,7 +76,7 @@ export default function Rsvp() {
       </div>
       <div className='relative z-10 flex justify-end'>
         <img
-          src='/src/assets/flower1.png'
+          src={Flower1}
           alt='Flower Image'
           className='w-1/3 scale-x-[-1] rotate-90 self-start object-contain'
         />

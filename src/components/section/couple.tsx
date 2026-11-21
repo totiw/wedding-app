@@ -1,4 +1,7 @@
 import { cn } from 'cn';
+import Couple1 from '@/assets/couple1.webp';
+import Ripped1 from '@/assets/ripped1.webp';
+import Flower2 from '@/assets/flower2.png';
 
 export default function Couple() {
   return (
@@ -6,9 +9,13 @@ export default function Couple() {
       <div className='flex h-screen flex-col'>
         <div className='h-125'>
           <div
+            style={{
+              backgroundImage: `url(${Couple1})`,
+              maskImage: `url(${Ripped1})`,
+            }}
             className={cn(
-              'h-full bg-[url(/src/assets/couple1.webp)] bg-cover bg-center bg-no-repeat',
-              'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
+              'h-full bg-cover bg-center bg-no-repeat',
+              'mask-cover mask-center mask-no-repeat'
             )}
           />
         </div>
@@ -28,7 +35,7 @@ export default function Couple() {
         <span className='translate-x-1/2'>Nur</span>
       </div>
       <img
-        src='/src/assets/flower2.png'
+        src={Flower2}
         alt='Flower Image'
         className={cn(
           'w-1/3 origin-top-left -rotate-90 object-contain',
@@ -36,7 +43,7 @@ export default function Couple() {
         )}
       />
       <img
-        src='/src/assets/flower2.png'
+        src={Flower2}
         alt='Flower Image'
         className={cn(
           'w-1/3 origin-bottom-right -translate-y-full -rotate-90 object-contain',

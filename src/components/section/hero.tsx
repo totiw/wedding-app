@@ -1,3 +1,6 @@
+import Flower1 from '@/assets/flower1.png';
+import Rings from '@/assets/ring.png';
+
 export default function Hero() {
   return (
     <section
@@ -5,18 +8,10 @@ export default function Hero() {
       className='relative z-20 flex flex-col items-center justify-center gap-6 rounded-lg'
     >
       <div className='flex'>
-        <img
-          src='/src/assets/flower1.png'
-          alt='Flower Image'
-          className='w-1/2 self-start object-contain'
-        />
-        <img
-          src='/src/assets/flower1.png'
-          alt='Flower Image'
-          className='w-1/2 scale-x-[-1] self-start object-contain'
-        />
+        <img src={Flower1} alt='Flower Image' className='w-1/2 self-start' />
+        <img src={Flower1} alt='Flower Image' className='w-1/2 scale-x-[-1] self-start' />
       </div>
-      <img src='/src/assets/ring.png' alt='Ring Image' className='w-1/2' />
+      <img src={Rings} alt='Ring Image' className='w-1/2' />
       <p className='p-8 text-center text-sm italic'>
         "dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu
         dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan

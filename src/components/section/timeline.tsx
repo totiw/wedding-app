@@ -1,5 +1,9 @@
 import { cn } from 'cn';
 import { Gem, Blend, Utensils, PartyPopper } from 'lucide-react';
+import Couple2 from '@/assets/couple2.webp';
+import Ripped1 from '@/assets/ripped1.webp';
+import Flower1 from '@/assets/flower1.png';
+import Wedding1 from '@/assets/wedding.svg';
 
 const timeline = [
   {
@@ -29,23 +33,23 @@ export default function Timeline() {
     <section id='timeline' className='relative z-30'>
       <div className='h-125'>
         <div
+          style={{
+            backgroundImage: `url(${Couple2})`,
+            maskImage: `url(${Ripped1})`,
+          }}
           className={cn(
-            'h-full w-full bg-[url(/src/assets/couple2.webp)] bg-cover bg-center bg-no-repeat',
-            'mask-[url(/src/assets/ripped1.webp)] mask-cover mask-center mask-no-repeat'
+            'h-full w-full bg-cover bg-center bg-no-repeat',
+            'mask-cover mask-center mask-no-repeat'
           )}
         />
       </div>
       <div className='relative z-10 -mt-8'>
-        <img
-          src='/src/assets/flower1.png'
-          alt='Flower Image'
-          className='w-1/3 self-start object-contain'
-        />
+        <img src={Flower1} alt='Flower Image' className='w-1/3 self-start object-contain' />
       </div>
       <div className='flex min-h-[80vh] flex-col items-center'>
         <span className='text-primary font-monte-carlo text-5xl font-semibold'>Susunan Acara</span>
         <span className='font-semibold'>Pernikahan</span>
-        <img src='/src/assets/wedding.svg' alt='wedding illustration' className='h-40 w-40' />
+        <img src={Wedding1} alt='wedding illustration' className='h-40 w-40' />
         <div className='relative grid flex-1 grid-cols-1'>
           <div className='bg-primary absolute top-12 bottom-12 left-1/2 w-0.5 -translate-x-1/2 border-r-2 border-dashed' />
           {timeline.map((tl, idx) => {
@@ -83,7 +87,7 @@ export default function Timeline() {
       </div>
       <div className='relative z-10 flex justify-end'>
         <img
-          src='/src/assets/flower1.png'
+          src={Flower1}
           alt='Flower Image'
           className='w-1/3 scale-x-[-1] rotate-90 self-start object-contain'
         />

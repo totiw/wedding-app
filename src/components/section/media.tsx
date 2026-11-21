@@ -4,6 +4,8 @@ import { cn } from 'cn';
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '../ui/button';
 import { formatTime } from '../../lib/utils';
+import BGMCover from '@/assets/bgm-cover.jpeg';
+import BGMAudio from '@/assets/bgm.mp3';
 
 export default function Media() {
   const skipTime = 5; //seconds
@@ -60,7 +62,7 @@ export default function Media() {
           className='bg-primary mx-auto box-border flex h-40 w-40 rounded-full p-4'
         >
           <img
-            src='/src/assets/bgm-cover.jpeg'
+            src={BGMCover}
             alt='cover bgm'
             className={cn(
               'animation-duration-[5s] animate-spin rounded-full border-6 border-white',
@@ -94,7 +96,7 @@ export default function Media() {
           <div className='flex'>
             <audio
               ref={audioRef}
-              src='/src/assets/bgm.mp3'
+              src={BGMAudio}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onEnded={() => setIsPlaying(false)}

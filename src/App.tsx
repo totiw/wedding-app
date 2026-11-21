@@ -7,12 +7,16 @@ import Timeline from './components/section/timeline';
 import Rsvp from './components/section/rsvp';
 import Maps from './components/section/maps';
 import Payment from './components/section/payment';
+import PaperBG from '@/assets/paper-bg.jpeg';
 
 function App() {
   return (
     <main
+      style={{
+        backgroundImage: `url(${PaperBG})`,
+      }}
       className={cn(
-        'bg-[url(/src/assets/paper-bg.jpeg)] bg-center',
+        `bg-center`,
         'relative z-0 h-screen w-dvw max-w-2xl',
         'mx-auto space-y-6 overflow-auto',
         'font-roboto-serif',
