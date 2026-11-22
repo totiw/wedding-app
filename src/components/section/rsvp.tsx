@@ -3,23 +3,24 @@ import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import Flower1 from '@/assets/flower1.png';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { getRsvps } from '@/feat/rsvp/api';
+import Card from '@/feat/rsvp/components/card';
+import type { RsvpDTO } from '@/feat/rsvp/dto';
 
 export default function Rsvp() {
+  const [rsvps, setRsvps] = useState([]);
   useEffect(() => {
-    async function getRsvps() {
+    const fetchData = async () => {
       try {
-        const response = await fetch(
-          'https://api-wedding-app.vercel.app/api/rsvps?page=1&limit=10'
-        ).then((res) => res.json());
-        console.log(response.data);
-        return response.data;
+        const rsvps_data = await getRsvps();
+        setRsvps(rsvps_data.data);
+        console.log(rsvps_data);
       } catch (error) {
         console.log(error);
       }
-    }
-
-    getRsvps();
+    };
+    fetchData();
   }, []);
   return (
     <section id='rsvp' className='relative z-20'>
@@ -56,23 +57,12 @@ export default function Rsvp() {
         </div>
         {/* CARD */}
         <div className='relative flex justify-center p-4'>
-          <div
-            data-slot='rsvp-card'
-            className='relative z-10 flex max-h-screen flex-col gap-12 overflow-y-auto *:even:self-end'
-          >
-            <div className='flex w-4/5 flex-col gap-4 rounded-md bg-white/50 p-2.5'>
-              <div className='flex items-center justify-between'>
-                <span className='font-semibold'>Rian & Vina</span>
-                <span className='rounded-md bg-green-500/50 px-1.5 py-1 text-sm text-green-700'>
-                  Hadir
-                </span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium voluptatum sit
-                corrupti sapiente cupiditate atque aliquid placeat odit facere exercitationem.
-              </p>
-              <span className='italic'>18 April 2025, 07:27</span>
-            </div>
+          <div className='relative z-10 flex max-h-80 flex-col gap-12 overflow-y-auto *:even:self-end'>
+            {rsvps.length ? (
+              rsvps.map((rsvp: RsvpDTO) => <Card key={rsvp.id} data={rsvp} />)
+            ) : (
+              <p>Silahkan kirim ucapan</p>
+            )}
           </div>
         </div>
       </div>
