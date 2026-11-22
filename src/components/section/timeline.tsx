@@ -1,6 +1,6 @@
 import { cn } from 'cn';
 import { Gem, Blend, Utensils, PartyPopper } from 'lucide-react';
-import Couple2 from '@/assets/couple2.webp';
+import Moment2 from '@/assets/moment2.webp';
 import Ripped1 from '@/assets/ripped1.webp';
 import Flower1 from '@/assets/flower1.png';
 import Wedding1 from '@/assets/wedding.svg';
@@ -34,7 +34,7 @@ export default function Timeline() {
       <div className='h-125'>
         <div
           style={{
-            backgroundImage: `url(${Couple2})`,
+            backgroundImage: `url(${Moment2})`,
             maskImage: `url(${Ripped1})`,
           }}
           className={cn(

@@ -1,10 +1,7 @@
-import { cn } from 'cn';
 import { Field, FieldLabel } from '../ui/field';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
-import Couple1 from '@/assets/couple1.webp';
-import Ripped1 from '@/assets/ripped1.webp';
 import Flower1 from '@/assets/flower1.png';
 import { useEffect } from 'react';
 
@@ -26,20 +23,9 @@ export default function Rsvp() {
   }, []);
   return (
     <section id='rsvp' className='relative z-20'>
-      <div className='h-125'>
-        <div
-          style={{
-            backgroundImage: `url(${Couple1})`,
-            maskImage: `url(${Ripped1})`,
-          }}
-          className={cn(
-            'h-full w-full bg-cover bg-center bg-no-repeat',
-            'mask-cover mask-center mask-no-repeat'
-          )}
-        />
-      </div>
-      <div className='relative z-10 -mt-8'>
-        <img src={Flower1} alt='Flower Image' className='w-1/3 self-start object-contain' />
+      <div className='flex justify-between'>
+        <img src={Flower1} alt='Flower Image' className='w-1/2 self-start' />
+        <img src={Flower1} alt='Flower Image' className='w-1/2 scale-x-[-1] self-start' />
       </div>
       <div className='flex flex-col gap-4 py-12'>
         <span className='text-primary font-monte-carlo self-center text-5xl font-semibold'>
@@ -62,7 +48,7 @@ export default function Rsvp() {
               <Textarea
                 id='field-notes'
                 placeholder='Selamat atas pernikahannya!'
-                className='h-40 resize-none bg-white'
+                className='h-20 resize-none bg-white'
               />
             </Field>
             <Button>Kirim</Button>
@@ -90,11 +76,12 @@ export default function Rsvp() {
           </div>
         </div>
       </div>
-      <div className='relative z-10 flex justify-end'>
+      <div className='flex justify-between'>
+        <img src={Flower1} alt='Flower Image' className='w-1/2 scale-y-[-1] self-start' />
         <img
           src={Flower1}
           alt='Flower Image'
-          className='w-1/3 scale-x-[-1] rotate-90 self-start object-contain'
+          className='w-1/2 scale-x-[-1] scale-y-[-1] self-start'
         />
       </div>
     </section>

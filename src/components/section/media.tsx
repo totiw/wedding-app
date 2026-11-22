@@ -54,8 +54,8 @@ export default function Media() {
   };
 
   return (
-    <section id='media' className='relative z-20 py-6'>
-      <div className='flex flex-col gap-4 px-4'>
+    <section id='media' className='relative z-20'>
+      <div className='flex flex-col gap-4 px-4 py-6'>
         {/* COVER IMAGE */}
         <div
           onClick={togglePlay}

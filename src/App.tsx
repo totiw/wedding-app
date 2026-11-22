@@ -1,17 +1,32 @@
 import { cn } from 'cn';
-import Hero from './components/section/hero';
-import Couple from './components/section/couple';
+// COMPONENTS
+import Moment from './components/section/moment';
+import Couple from './feat/couple/components/couple';
 import Events from './components/section/events';
-import Media from './components/section/media';
-import Timeline from './components/section/timeline';
 import Rsvp from './components/section/rsvp';
 import Maps from './components/section/maps';
 import Payment from './components/section/payment';
+import Cover from './components/section/cover';
+import Greetings from './components/section/greetings';
+
+// ASSETS
 import PaperBG from '@/assets/paper-bg.jpeg';
-import Envelope from '@/assets/envelope.jpeg';
-import { Button } from './components/ui/button';
+import Moment1 from '@/assets/moment1.webp';
+import Moment2 from '@/assets/moment2.webp';
+import Groom from '@/assets/groom.jpg';
+import Bride from '@/assets/bride.jpg';
+
+// DATA
+import CoupleData from '@/feat/couple/data.json';
+import EventData from '@/feat/events/data.json';
+import type { CoupleDTO } from './feat/couple/dto';
+import type { EventDTO } from './feat/events/dto';
 
 function App() {
+  const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
+  const bride_data: CoupleDTO = { ...CoupleData.bride, type: 'bride', imgUrl: Bride };
+  const marriage_data: EventDTO = { ...EventData.marriage };
+  const reseption_data: EventDTO = { ...EventData.reseption };
   return (
     <main
       style={{
@@ -25,43 +40,19 @@ function App() {
         'after:fixed after:top-0 after:z-10 after:mx-auto after:h-screen after:w-dvw after:max-w-2xl after:bg-[#D1F8EF]/50 after:content-[""]'
       )}
     >
-      <section id='cover-invitation' className='relative z-20'>
-        <div
-          style={{
-            backgroundImage: `url(${Envelope})`,
-          }}
-          className={cn(
-            'h-dvh bg-cover bg-center bg-no-repeat',
-            'mask-cover mask-center mask-no-repeat',
-            'flex flex-col justify-around',
-            'text-white'
-          )}
-        >
-          <div className='flex flex-col items-center gap-4'>
-            <span className='text-xl capitalize'>
-              YOUR INVITED TO <br /> THE WEDDING OF
-            </span>
-            <span className='font-monte-carlo text-7xl font-semibold text-yellow-500'>Tanu</span>
-            <span className='text-4xl'>&</span>
-            <span className='font-monte-carlo text-7xl font-semibold text-yellow-500'>Nur</span>
-            <span className='text-lg font-medium'>12 Desember 2026</span>
-          </div>
-          <div className='flex flex-col items-center'>
-            <span className='text-sm'>Kepada Yth.</span>
-            <span className='text-2xl text-yellow-500'>Tamu & Partner</span>
-            <Button className='mt-4'>Open Invitation</Button>
-          </div>
-        </div>
-      </section>
+      <Cover />
       <div className='p-4'>
-        <Hero />
-        <Couple />
-        <Events />
-        <Media />
-        <Timeline />
+        <Greetings />
+        <Moment url={Moment1} />
+        <Couple data={groom_data} />
+        <Couple data={bride_data} />
+        <Moment url={Moment2} />
+        <Events data={marriage_data} />
+        <Events data={reseption_data} />
+        <Moment url={Moment1} />
+        <Maps />
         <Rsvp />
         <Payment />
-        <Maps />
       </div>
     </main>
   );

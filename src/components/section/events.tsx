@@ -1,47 +1,50 @@
-import { Fragment } from 'react/jsx-runtime';
-import { useCountdown } from '@/hooks/useCountdown';
+import Countdown from '@/feat/events/components/countdown';
+import Flower1 from '@/assets/flower1.png';
+import type { EventDTO } from '@/feat/events/dto';
+import { formatEventsDate, formatEventsTime, getEventsDateTime } from '@/lib/utils';
 
-interface CountDownItem {
-  label: string;
-  value: number;
-}
-
-export default function Events() {
-  const { days, hours, minutes, seconds } = useCountdown('2026-12-12T08:00:00+07:00');
-  const countdownItems: (CountDownItem | string)[] = [
-    { label: 'Hari', value: days },
-    ':',
-    { label: 'Jam', value: hours },
-    ':',
-    { label: 'Menit', value: minutes },
-    ':',
-    { label: 'Detik', value: seconds },
-  ];
+export default function Events({ data }: { data: EventDTO }) {
+  const { date, endTime, location, name, startTime } = data;
+  const event_date = formatEventsDate(date);
+  const event_time = formatEventsTime(startTime, endTime);
   return (
-    <section id='events' className='relative z-20 flex flex-col gap-20 py-12'>
-      <div className='flex flex-col'>
-        <span className='text-center'>Desember</span>
-        <div className='m-auto flex w-4/5 items-center justify-evenly'>
-          <span className='border-primary flex-1 border-y-2 text-center leading-loose'>Sabtu</span>
-          <span className='font-monte-carlo text-primary flex-1 text-center text-6xl'>12</span>
-          <span className='border-primary flex-1 border-y-2 text-center leading-loose'>2026</span>
+    <section id='events' className='relative z-20'>
+      <div className='flex h-dvh flex-col justify-between'>
+        <div className='flex justify-between'>
+          <img src={Flower1} alt='Flower Image' className='w-1/3 self-start' />
+          <img src={Flower1} alt='Flower Image' className='w-1/3 scale-x-[-1] self-start' />
         </div>
-      </div>
-      <div className='flex flex-col gap-4'>
-        <span className='text-center'>Menunggu hari istimewa kami</span>
-        <div className='flex items-center justify-evenly'>
-          {countdownItems.map((item, idx) => (
-            <Fragment key={typeof item !== 'string' ? item.label : idx}>
-              {typeof item !== 'string' ? (
-                <div className='text-center'>
-                  <div className='text-primary text-5xl'>{String(item.value).padStart(2, '0')}</div>
-                  <div className='text-sm text-gray-500'>{item.label}</div>
-                </div>
-              ) : (
-                <div>{item}</div>
-              )}
-            </Fragment>
-          ))}
+        <div className='flex flex-col gap-8'>
+          <span className='text-primary text-center text-4xl font-semibold'>{name}</span>
+          <div className='flex flex-col gap-4'>
+            <span className='text-center text-lg'>{event_date.month}</span>
+            <div className='m-auto flex w-4/5 items-center justify-evenly'>
+              <span className='border-primary flex-1 border-y-2 text-center text-lg leading-loose'>
+                {event_date.day}
+              </span>
+              <span className='font-monte-carlo text-primary flex-1 text-center text-6xl font-bold'>
+                {event_date.date}
+              </span>
+              <span className='border-primary flex-1 border-y-2 text-center text-lg leading-loose'>
+                {event_date.year}
+              </span>
+            </div>
+            <span className='text-center text-lg'>{event_time}</span>
+          </div>
+          <div className='flex flex-col items-center gap-1'>
+            <span className='text-primary text-center text-3xl font-medium'>Lokasi Acara</span>
+            <span className='text-center text-lg font-semibold'>Rumah mempelai wanita</span>
+            <span className='w-60 text-center text-sm'>{location}</span>
+          </div>
+          <Countdown date={getEventsDateTime(date, startTime)} />
+        </div>
+        <div className='flex justify-between'>
+          <img src={Flower1} alt='Flower Image' className='w-1/3 scale-y-[-1] self-start' />
+          <img
+            src={Flower1}
+            alt='Flower Image'
+            className='w-1/3 scale-x-[-1] scale-y-[-1] self-start'
+          />
         </div>
       </div>
     </section>

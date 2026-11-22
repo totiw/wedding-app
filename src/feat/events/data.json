@@ -1,0 +1,16 @@
+{
+  "marriage": {
+    "name": "Akad Nikah",
+    "date": "2026-12-12",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "location": "Perumahan Taman Raya Citayam Blok B3 No.4 Jl. Bougenville"
+  },
+  "reseption": {
+    "name": "Resepsi",
+    "date": "2026-12-12",
+    "startTime": "11:00",
+    "endTime": "17:00",
+    "location": "Perumahan Taman Raya Citayam Blok B3 No.4 Jl. Bougenville"
+  }
+}
