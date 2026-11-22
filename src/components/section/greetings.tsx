@@ -15,10 +15,7 @@ export default function Greetings() {
           Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara
           resepsi pernikahan anak kami
         </p>
-        <div
-          data-slot='couple-initial'
-          className='font-monte-carlo flex w-full justify-center gap-6 pb-4 text-7xl'
-        >
+        <div className='font-monte-carlo flex w-full justify-center gap-6 pb-4 text-7xl'>
           <span>T</span>
           <hr className='ml-2 h-auto border-l-2 border-gray-300' />
           <span>N</span>

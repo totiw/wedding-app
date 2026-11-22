@@ -18,10 +18,7 @@ export default function Quotes() {
             benar-benar terdapat tanda-tanda kebesaran Allah bagi kaum yang berpikir."
           </p>
           <span className='mb-6 font-bold'>[QS. Ar-Rum: 21]</span>
-          <div
-            id='couple-initial'
-            className='font-monte-carlo flex w-full justify-center gap-6 pb-4 text-7xl'
-          >
+          <div className='font-monte-carlo flex w-full justify-center gap-6 pb-4 text-7xl'>
             <span>T</span>
             <hr className='ml-2 h-auto border-l-2 border-gray-300' />
             <span>N</span>
@@ -39,3 +36,4 @@ export default function Quotes() {
     </section>
   );
 }
+// https://youtu.be/852S1cKSOLc?si=a05wBDYc7FW9-Gj1

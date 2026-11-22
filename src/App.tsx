@@ -22,6 +22,7 @@ import CoupleData from '@/feat/couple/data.json';
 import EventData from '@/feat/events/data.json';
 import type { CoupleDTO } from './feat/couple/dto';
 import type { EventDTO } from './feat/events/dto';
+import Thanks from './components/section/thanks';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
@@ -55,6 +56,7 @@ function App() {
         <Rsvp />
         <Payment />
         <Quotes />
+        <Thanks />
       </div>
     </main>
   );

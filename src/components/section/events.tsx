@@ -15,7 +15,9 @@ export default function Events({ data }: { data: EventDTO }) {
           <img src={Flower1} alt='Flower Image' className='w-1/3 scale-x-[-1] self-start' />
         </div>
         <div className='flex flex-col gap-8'>
-          <span className='text-primary text-center text-4xl font-semibold'>{name}</span>
+          <span className='text-primary font-monte-carlo text-center text-5xl font-bold'>
+            {name}
+          </span>
           <div className='flex flex-col gap-4'>
             <span className='text-center text-lg'>{event_date.month}</span>
             <div className='m-auto flex w-4/5 items-center justify-evenly'>
