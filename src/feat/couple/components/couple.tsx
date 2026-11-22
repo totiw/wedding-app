@@ -5,8 +5,8 @@ export default function Couple({ data }: { data: CoupleDTO }) {
     <section className='relative z-20'>
       <div className='flex h-dvh flex-col items-center justify-between'>
         <div className='flex justify-between'>
-          <img src={Flower1} alt='Flower Image' className='w-1/2 self-start' />
-          <img src={Flower1} alt='Flower Image' className='w-1/2 scale-x-[-1] self-start' />
+          <img src={Flower1} alt='Flower Image' className='w-1/3 self-start' />
+          <img src={Flower1} alt='Flower Image' className='w-1/3 scale-x-[-1] self-start' />
         </div>
         <div className='flex flex-col items-center gap-4'>
           <img
@@ -23,11 +23,11 @@ export default function Couple({ data }: { data: CoupleDTO }) {
           </p>
         </div>
         <div className='flex justify-between'>
-          <img src={Flower1} alt='Flower Image' className='w-1/2 scale-y-[-1] self-start' />
+          <img src={Flower1} alt='Flower Image' className='w-1/3 scale-y-[-1] self-start' />
           <img
             src={Flower1}
             alt='Flower Image'
-            className='w-1/2 scale-x-[-1] scale-y-[-1] self-start'
+            className='w-1/3 scale-x-[-1] scale-y-[-1] self-start'
           />
         </div>
       </div>

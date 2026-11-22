@@ -8,6 +8,7 @@ import Maps from './components/section/maps';
 import Payment from './components/section/payment';
 import Cover from './components/section/cover';
 import Greetings from './components/section/greetings';
+import Quotes from './components/section/quotes';
 
 // ASSETS
 import PaperBG from '@/assets/paper-bg.jpeg';
@@ -53,6 +54,7 @@ function App() {
         <Maps />
         <Rsvp />
         <Payment />
+        <Quotes />
       </div>
     </main>
   );

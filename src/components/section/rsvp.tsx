@@ -24,8 +24,8 @@ export default function Rsvp() {
   return (
     <section id='rsvp' className='relative z-20'>
       <div className='flex justify-between'>
-        <img src={Flower1} alt='Flower Image' className='w-1/2 self-start' />
-        <img src={Flower1} alt='Flower Image' className='w-1/2 scale-x-[-1] self-start' />
+        <img src={Flower1} alt='Flower Image' className='w-1/3 self-start' />
+        <img src={Flower1} alt='Flower Image' className='w-1/3 scale-x-[-1] self-start' />
       </div>
       <div className='flex flex-col gap-4 py-12'>
         <span className='text-primary font-monte-carlo self-center text-5xl font-semibold'>
@@ -77,11 +77,11 @@ export default function Rsvp() {
         </div>
       </div>
       <div className='flex justify-between'>
-        <img src={Flower1} alt='Flower Image' className='w-1/2 scale-y-[-1] self-start' />
+        <img src={Flower1} alt='Flower Image' className='w-1/3 scale-y-[-1] self-start' />
         <img
           src={Flower1}
           alt='Flower Image'
-          className='w-1/2 scale-x-[-1] scale-y-[-1] self-start'
+          className='w-1/3 scale-x-[-1] scale-y-[-1] self-start'
         />
       </div>
     </section>
