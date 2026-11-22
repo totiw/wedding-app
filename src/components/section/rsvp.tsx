@@ -6,8 +6,24 @@ import { Button } from '../ui/button';
 import Couple1 from '@/assets/couple1.webp';
 import Ripped1 from '@/assets/ripped1.webp';
 import Flower1 from '@/assets/flower1.png';
+import { useEffect } from 'react';
 
 export default function Rsvp() {
+  useEffect(() => {
+    async function getRsvps() {
+      try {
+        const response = await fetch(
+          'https://api-wedding-app.vercel.app/api/rsvps?page=1&limit=10'
+        ).then((res) => res.json());
+        console.log(response.data);
+        return response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getRsvps();
+  }, []);
   return (
     <section id='rsvp' className='relative z-20'>
       <div className='h-125'>
