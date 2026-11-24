@@ -143,7 +143,7 @@ export default function Rsvp() {
         {/* CARD */}
         <div className='relative flex justify-center py-4'>
           <div className='relative z-10 flex max-h-80 w-full flex-col gap-12 overflow-y-auto *:even:self-end'>
-            {rsvps.length > 0 ? (
+            {rsvps?.length > 0 ? (
               rsvps.map((rsvp: RsvpDTO) => <Card key={rsvp.id} data={rsvp} />)
             ) : (
               <p>Silahkan kirim ucapan</p>
