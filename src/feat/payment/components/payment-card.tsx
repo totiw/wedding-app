@@ -17,7 +17,8 @@ export default function PaymentCard({ data }: { data: PaymentDTO }) {
           description: 'Berhasil menyalin rekening',
         });
       }, 2000);
-    } catch {
+    } catch (error) {
+      console.log(error);
       toast.add({
         type: 'error',
         description: 'Gagal menyalin rekening',
