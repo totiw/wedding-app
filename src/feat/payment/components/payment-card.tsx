@@ -1,14 +1,27 @@
 import { Button } from '@/components/ui/button';
 import type { PaymentDTO } from '../dto';
+import { toast } from '@/components/ui/toast';
+import { useState } from 'react';
 
 export default function PaymentCard({ data }: { data: PaymentDTO }) {
+  const [btnText, setBtnText] = useState('Salin Rekening');
   const { accountNumber, name, url } = data;
   const handleCopy = async (text: string) => {
+    setBtnText('Menyalin..');
     try {
       await navigator.clipboard.writeText(text);
-      console.log('Text berhasil disalin!');
-    } catch (error) {
-      console.error('Gagal menyalin text:', error);
+      setTimeout(() => {
+        setBtnText('Salin Rekening');
+        toast.add({
+          type: 'success',
+          description: 'Berhasil menyalin rekening',
+        });
+      }, 2000);
+    } catch {
+      toast.add({
+        type: 'error',
+        description: 'Gagal menyalin rekening',
+      });
     }
   };
 
@@ -19,10 +32,12 @@ export default function PaymentCard({ data }: { data: PaymentDTO }) {
           <div className='w-20'>
             <img src={url} alt='Logo Bank' className='h-full w-full leading-tight' />
           </div>
-          <span>{accountNumber}</span>
+          <span className='text-lg font-semibold'>{accountNumber}</span>
           <span>{name}</span>
         </div>
-        <Button onClick={() => handleCopy(accountNumber)}>Salin Rekening</Button>
+        <Button className='bg-yellow-500' onClick={() => handleCopy(accountNumber)}>
+          {btnText}
+        </Button>
       </div>
     </div>
   );

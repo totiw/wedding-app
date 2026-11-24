@@ -22,7 +22,7 @@ export default function Countdown({ date }: { date: string }) {
       {countdownItems.map((item, idx) => (
         <Fragment key={typeof item !== 'string' ? item.label : idx}>
           {typeof item !== 'string' ? (
-            <div className='bg-primary rounded-lg p-2 text-center text-white'>
+            <div className='rounded-lg bg-yellow-500 p-2 text-center text-white'>
               <div className='text-3xl'>{String(item.value).padStart(2, '0')}</div>
               <div className='text-sm'>{item.label}</div>
             </div>

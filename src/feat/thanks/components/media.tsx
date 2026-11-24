@@ -1,13 +1,14 @@
 import { useRef, useState } from 'react';
-import { Slider } from '../../../components/ui/slider';
+import { Slider } from '@/components/ui/slider';
 import { cn } from 'cn';
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
-import { Button } from '../../../components/ui/button';
-import { formatTime } from '../../../lib/utils';
-import BGMCover from '@/assets/bgm-cover.jpeg';
+import { Button } from '@/components/ui/button';
+import { formatTime } from '@/lib/utils';
 import BGMAudio from '@/assets/bgm.mp3';
+import type { MediaDTO } from '../dto';
 
-export default function Media() {
+export default function Media({ data }: { data: MediaDTO }) {
+  const { imageUrl, name, url } = data;
   const skipTime = 5; //seconds
   const audioRef = useRef<HTMLAudioElement>(null);
   const [duration, setDuration] = useState(0);
@@ -61,7 +62,7 @@ export default function Media() {
         className='bg-primary mx-auto box-border flex h-40 w-40 rounded-full p-4'
       >
         <img
-          src={BGMCover}
+          src={imageUrl}
           alt='cover bgm'
           className={cn(
             'animation-duration-[5s] animate-spin rounded-full border-6 border-white',
@@ -71,9 +72,7 @@ export default function Media() {
       </div>
       {/* SONG NAME */}
       <div className='mx-auto w-48 overflow-hidden whitespace-nowrap'>
-        <div className='animate-marquee w-fit'>
-          Stephen Sanchez - Until I Found You (Official Video)
-        </div>
+        <div className='animate-marquee w-fit'>{name}</div>
       </div>
       {/* SLIDER CONTROL */}
       <div className='flex items-baseline gap-4'>
@@ -94,8 +93,9 @@ export default function Media() {
       <div className='flex justify-center'>
         <div className='flex'>
           <audio
+            autoPlay={false}
             ref={audioRef}
-            src={BGMAudio}
+            src={url || BGMAudio}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={() => setIsPlaying(false)}

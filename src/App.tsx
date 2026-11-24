@@ -23,6 +23,7 @@ import EventData from '@/feat/events/data.json';
 import type { CoupleDTO } from './feat/couple/dto';
 import type { EventDTO } from './feat/events/dto';
 import Thanks from './components/section/thanks';
+import { Toaster } from './components/ui/toast';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
@@ -30,35 +31,38 @@ function App() {
   const marriage_data: EventDTO = { ...EventData.marriage };
   const reseption_data: EventDTO = { ...EventData.reseption };
   return (
-    <main
-      style={{
-        backgroundImage: `url(${PaperBG})`,
-      }}
-      className={cn(
-        `bg-center`,
-        'relative z-0 h-screen w-dvw max-w-2xl',
-        'mx-auto space-y-6 overflow-auto',
-        'font-roboto-serif',
-        'after:fixed after:top-0 after:z-10 after:mx-auto after:h-screen after:w-dvw after:max-w-2xl after:bg-[#D1F8EF]/50 after:content-[""]'
-      )}
-    >
-      <Cover />
-      <div className='p-4'>
-        <Greetings />
-        <Moment url={Moment1} />
-        <Couple data={groom_data} />
-        <Couple data={bride_data} />
-        <Moment url={Moment2} />
-        <Events data={marriage_data} />
-        <Events data={reseption_data} />
-        <Moment url={Moment1} />
-        <Maps />
-        <Rsvp />
-        <Payment />
-        <Quotes />
-        <Thanks />
-      </div>
-    </main>
+    <>
+      <main
+        style={{
+          backgroundImage: `url(${PaperBG})`,
+        }}
+        className={cn(
+          `bg-center`,
+          'relative z-0 h-screen w-dvw max-w-2xl',
+          'mx-auto space-y-6 overflow-auto',
+          'font-roboto-serif',
+          'after:fixed after:top-0 after:z-10 after:mx-auto after:h-screen after:w-dvw after:max-w-2xl after:bg-[#D1F8EF]/50 after:content-[""]'
+        )}
+      >
+        <Cover />
+        <div className='p-4'>
+          <Greetings />
+          <Moment url={Moment1} />
+          <Couple data={groom_data} />
+          <Couple data={bride_data} />
+          <Moment url={Moment2} />
+          <Events data={marriage_data} />
+          <Events data={reseption_data} />
+          <Moment url={Moment1} />
+          <Maps />
+          <Rsvp />
+          <Payment />
+          <Quotes />
+          <Thanks />
+        </div>
+      </main>
+      <Toaster />
+    </>
   );
 }
 

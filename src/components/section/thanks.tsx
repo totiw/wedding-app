@@ -1,6 +1,10 @@
 import Flower1 from '@/assets/flower1.png';
 import Media from '@/feat/thanks/components/media';
+import MediaData from '@/feat/thanks/data.json';
+import type { MediaDTO } from '@/feat/thanks/dto';
+
 export default function Thanks() {
+  const data_media: MediaDTO = MediaData.data;
   return (
     <section id='quotes' className='relative z-20'>
       <div className='flex h-dvh flex-col justify-between'>
@@ -21,7 +25,7 @@ export default function Thanks() {
               <span>Nur</span>
             </div>
           </div>
-          <Media />
+          <Media data={data_media} />
         </div>
         <div className='flex justify-between'>
           <img src={Flower1} alt='Flower Image' className='w-1/3 scale-y-[-1] self-start' />

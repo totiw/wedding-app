@@ -30,7 +30,7 @@ export default function Maps() {
             <a
               href='https://maps.app.goo.gl/jv9ArhLjfVfwoccVA'
               target='_blank'
-              className='bg-primary rounded-md p-2 text-white'
+              className='rounded-md bg-yellow-500 p-2 text-white'
             >
               Petunjuk Ke Lokasi
             </a>

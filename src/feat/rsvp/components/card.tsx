@@ -7,13 +7,13 @@ export default function Card({ data }: { data: RsvpDTO }) {
   const formattedDate = dayjs(createdAt).format('D MMMM YYYY, HH:mm');
 
   return (
-    <div className='flex w-4/5 flex-col gap-4 rounded-md bg-white/50 p-2.5'>
-      <div className='flex items-center justify-between'>
+    <div className='flex w-full flex-col gap-4 rounded-md bg-white/50 p-2.5'>
+      <div className='flex items-start justify-between gap-4'>
         <span className='font-semibold'>{name}</span>
         <span
           className={cn(
             present ? 'bg-green-500/50 text-green-700' : 'bg-red-500/50 text-red-700',
-            'rounded-md px-1.5 py-1 text-sm'
+            'rounded-md px-1.5 py-1 text-sm whitespace-nowrap'
           )}
         >
           {present ? 'Hadir' : 'Tidak Hadir'}
