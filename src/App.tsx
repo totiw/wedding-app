@@ -1,14 +1,14 @@
 import { cn } from 'cn';
 // COMPONENTS
-import Moment from './components/section/moment';
+import Moment from './components/moment';
 import Couple from './feat/couple/components/couple';
-import Events from './components/section/events';
-import Rsvp from './components/section/rsvp';
-import Maps from './components/section/maps';
-import Payment from './components/section/payment';
-import Cover from './components/section/cover';
-import Greetings from './components/section/greetings';
-import Quotes from './components/section/quotes';
+import Events from './feat/events/components/events';
+import Rsvp from './feat/rsvp/components/rsvp';
+import Maps from './feat/maps/components/maps';
+import Payment from './feat/payment/components/payment';
+import Cover from './feat/cover/components/cover';
+import Greetings from './feat/greetings/components/greetings';
+import Quotes from './feat/quotes/components/quotes';
 
 // ASSETS
 import PaperBG from '@/assets/paper-bg.jpeg';
@@ -22,8 +22,9 @@ import CoupleData from '@/feat/couple/data.json';
 import EventData from '@/feat/events/data.json';
 import type { CoupleDTO } from './feat/couple/dto';
 import type { EventDTO } from './feat/events/dto';
-import Thanks from './components/section/thanks';
+import Thanks from './feat/thanks/components/thanks';
 import { Toaster } from './components/ui/toast';
+import Prewed from './feat/prewed/components/prewed';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
@@ -58,6 +59,7 @@ function App() {
           <Rsvp />
           <Payment />
           <Quotes />
+          <Prewed />
           <Thanks />
         </div>
       </main>

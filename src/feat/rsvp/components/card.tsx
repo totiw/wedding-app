@@ -7,7 +7,7 @@ export default function Card({ data }: { data: RsvpDTO }) {
   const formattedDate = dayjs(createdAt).format('D MMMM YYYY, HH:mm');
 
   return (
-    <div className='flex w-full flex-col gap-4 rounded-md bg-white/50 p-2.5'>
+    <div className='flex w-4/5 flex-col gap-4 rounded-md bg-white/50 p-2.5'>
       <div className='flex items-start justify-between gap-4'>
         <span className='font-semibold'>{name}</span>
         <span
@@ -20,7 +20,7 @@ export default function Card({ data }: { data: RsvpDTO }) {
         </span>
       </div>
       <p>{notes}</p>
-      <span className='italic'>{formattedDate}</span>
+      <span className='text-xs italic'>{formattedDate}</span>
     </div>
   );
 }

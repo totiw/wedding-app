@@ -5,7 +5,7 @@ import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { formatTime } from '@/lib/utils';
 import BGMAudio from '@/assets/bgm.mp3';
-import type { MediaDTO } from '../dto';
+import type { MediaDTO } from '@/feat/thanks/dto';
 
 export default function Media({ data }: { data: MediaDTO }) {
   const { imageUrl, name, url } = data;
@@ -93,9 +93,10 @@ export default function Media({ data }: { data: MediaDTO }) {
       <div className='flex justify-center'>
         <div className='flex'>
           <audio
-            autoPlay={false}
+            autoPlay={true}
             ref={audioRef}
             src={url || BGMAudio}
+            preload='auto'
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={() => setIsPlaying(false)}
