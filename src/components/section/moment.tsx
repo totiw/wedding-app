@@ -3,9 +3,9 @@ import Ripped1 from '@/assets/ripped1.webp';
 
 export default function Moment({ url }: { url: string }) {
   return (
-    <section id='moment' className='relative z-20 space-y-12'>
+    <section id='moment' className='relative z-20'>
       <div className='flex h-dvh flex-col justify-center'>
-        <div className='h-125'>
+        <div className='h-full'>
           <div
             style={{
               backgroundImage: `url(${url})`,

@@ -18,7 +18,7 @@ export default function Countdown({ date }: { date: string }) {
     { label: 'Detik', value: seconds },
   ];
   return (
-    <div className='flex items-center justify-evenly'>
+    <div className='flex items-center justify-center gap-4'>
       {countdownItems.map((item, idx) => (
         <Fragment key={typeof item !== 'string' ? item.label : idx}>
           {typeof item !== 'string' ? (
