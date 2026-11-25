@@ -52,22 +52,20 @@ function App() {
         )}
       >
         <Cover setIsOpened={setIsOpened} />
-        <div className='p-4'>
-          <Greetings />
-          <Moment url={Moment1} />
-          <Couple data={groom_data} />
-          <Couple data={bride_data} />
-          <Moment url={Moment2} />
-          <Events data={marriage_data} />
-          <Events data={reseption_data} />
-          <Moment url={Moment1} />
-          <Maps />
-          <Rsvp />
-          <Payment />
-          <Quotes />
-          <Prewed />
-          <Thanks />
-        </div>
+        <Greetings />
+        <Moment url={Moment1} />
+        <Couple data={groom_data} />
+        <Couple data={bride_data} />
+        <Moment url={Moment2} />
+        <Events data={marriage_data} />
+        <Events data={reseption_data} />
+        <Moment url={Moment1} />
+        <Maps />
+        <Rsvp />
+        <Payment />
+        <Quotes />
+        <Prewed />
+        <Thanks />
       </main>
       <Toaster />
     </AudioProvider>
