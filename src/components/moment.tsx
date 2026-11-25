@@ -3,7 +3,7 @@ import Ripped1 from '@/assets/ripped1.webp';
 
 export default function Moment({ url }: { url: string }) {
   return (
-    <section id='moment' className='relative z-20'>
+    <section id='moment' className='relative z-20 snap-start'>
       <div className='flex h-dvh flex-col justify-center'>
         <div className='h-full'>
           <div

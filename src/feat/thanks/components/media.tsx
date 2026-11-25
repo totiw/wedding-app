@@ -1,56 +1,33 @@
-import { useRef, useState } from 'react';
 import { Slider } from '@/components/ui/slider';
 import { cn } from 'cn';
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { formatTime } from '@/lib/utils';
-import BGMAudio from '@/assets/bgm.mp3';
 import type { MediaDTO } from '@/feat/thanks/dto';
+import { useAudio } from '@/context/audio/use-audio';
 
 export default function Media({ data }: { data: MediaDTO }) {
-  const { imageUrl, name, url } = data;
+  const { imageUrl, name } = data;
+  const { togglePlay, seek, audioRef, duration, isPlaying, currentTime } = useAudio();
   const skipTime = 5; //seconds
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [duration, setDuration] = useState(0);
-  const [timeValue, setTimeValue] = useState([0]);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlay = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (audio.paused) {
-      await audio.play();
-    } else {
-      audio.pause();
-    }
-  };
-
-  const handleSlider = (value: number) => {
-    setTimeValue([value]);
-
-    if (audioRef.current) {
-      audioRef.current.currentTime = value;
-    }
-  };
 
   const handleForward = () => {
     if (!audioRef.current) return;
 
-    if (timeValue[0] <= duration - skipTime) {
-      audioRef.current.currentTime = timeValue[0] + 5;
+    if (currentTime <= duration - skipTime) {
+      seek(currentTime + 5);
     } else {
-      audioRef.current.currentTime = duration;
+      seek(duration);
     }
   };
 
   const handleBackward = () => {
     if (!audioRef.current) return;
 
-    if (timeValue[0] >= skipTime) {
-      audioRef.current.currentTime = timeValue[0] - 5;
+    if (currentTime >= skipTime) {
+      seek(currentTime - 5);
     } else {
-      audioRef.current.currentTime = 0;
+      seek(0);
     }
   };
 
@@ -76,10 +53,10 @@ export default function Media({ data }: { data: MediaDTO }) {
       </div>
       {/* SLIDER CONTROL */}
       <div className='flex items-baseline gap-4'>
-        <span>{formatTime(timeValue[0])}</span>
+        <span>{formatTime(currentTime)}</span>
         <Slider
-          value={timeValue}
-          onValueChange={(value) => handleSlider(+value)}
+          value={currentTime}
+          onValueChange={(value) => seek(+value)}
           max={duration || 1}
           step={1}
           className={cn(
@@ -92,17 +69,6 @@ export default function Media({ data }: { data: MediaDTO }) {
       {/* AUDIO SOURCE */}
       <div className='flex justify-center'>
         <div className='flex'>
-          <audio
-            autoPlay={true}
-            ref={audioRef}
-            src={url || BGMAudio}
-            preload='auto'
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onEnded={() => setIsPlaying(false)}
-            onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-            onTimeUpdate={(e) => setTimeValue([e.currentTarget.currentTime])}
-          />
           <Button onClick={handleBackward} className='' variant='link' size='icon'>
             <SkipBack />
           </Button>

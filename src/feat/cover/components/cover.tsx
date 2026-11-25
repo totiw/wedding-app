@@ -1,9 +1,25 @@
-import Frame from '../../../components/frame';
-import { Button } from '../../../components/ui/button';
+import Frame from '@/components/frame';
+import { Button } from '@/components/ui/button';
+import { useAudio } from '@/context/audio/use-audio';
+import type { ComponentProps } from 'react';
 
-export default function Cover() {
+interface SectionProps extends ComponentProps<'section'> {
+  setIsOpened: React.Dispatch<boolean>;
+}
+
+export default function Cover({ setIsOpened, ...props }: SectionProps) {
+  const { play } = useAudio();
+  const handleOpen = () => {
+    play();
+    setIsOpened(true);
+
+    document.getElementById('greetings')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
   return (
-    <Frame id='cover'>
+    <Frame id='cover' {...props}>
       <div className='flex h-[calc(80dvh)] flex-col justify-around'>
         <div className='flex flex-col items-center gap-4'>
           <span className='text-xl capitalize'>
@@ -17,7 +33,15 @@ export default function Cover() {
         <div className='flex flex-col items-center'>
           <span className='text-sm'>Kepada Yth.</span>
           <span className='text-primary text-2xl'>Tamu & Partner</span>
-          <Button className='mt-4 bg-yellow-500'>Open Invitation</Button>
+          <Button
+            onClick={() => {
+              handleOpen();
+              play();
+            }}
+            className='mt-4 bg-yellow-500'
+          >
+            Open Invitation
+          </Button>
         </div>
       </div>
     </Frame>

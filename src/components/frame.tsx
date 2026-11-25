@@ -8,7 +8,7 @@ interface SectionWrapperProps extends ComponentProps<'section'> {
 
 export default function Frame({ children, ...props }: SectionWrapperProps) {
   return (
-    <section {...props} className={cn('relative z-20', props.className)}>
+    <section {...props} className={cn('relative z-20 snap-start', props.className)}>
       <div className='flex h-dvh flex-col justify-between'>
         <div className='flex justify-between'>
           <img src={Flower1} alt='Flower Image' className='w-1/3 self-start' />

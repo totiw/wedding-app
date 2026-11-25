@@ -20,32 +20,38 @@ import Bride from '@/assets/bride.jpg';
 // DATA
 import CoupleData from '@/feat/couple/data.json';
 import EventData from '@/feat/events/data.json';
-import type { CoupleDTO } from './feat/couple/dto';
-import type { EventDTO } from './feat/events/dto';
-import Thanks from './feat/thanks/components/thanks';
-import { Toaster } from './components/ui/toast';
-import Prewed from './feat/prewed/components/prewed';
+import type { CoupleDTO } from '@/feat/couple/dto';
+import type { EventDTO } from '@/feat/events/dto';
+import Thanks from '@/feat/thanks/components/thanks';
+import { Toaster } from '@/components/ui/toast';
+import Prewed from '@/feat/prewed/components/prewed';
+import { AudioProvider } from '@/context/audio/audio.provider';
+import { useState } from 'react';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
   const bride_data: CoupleDTO = { ...CoupleData.bride, type: 'bride', imgUrl: Bride };
   const marriage_data: EventDTO = { ...EventData.marriage };
   const reseption_data: EventDTO = { ...EventData.reseption };
+
+  const [isOpened, setIsOpened] = useState(false);
+
   return (
-    <>
+    <AudioProvider>
       <main
         style={{
           backgroundImage: `url(${PaperBG})`,
         }}
         className={cn(
-          `bg-center`,
-          'relative z-0 h-screen w-dvw max-w-2xl',
-          'mx-auto space-y-6 overflow-auto',
+          isOpened ? 'h-screen snap-y snap-mandatory overflow-y-auto' : 'h-dvh overflow-hidden',
+          'bg-center',
+          'relative z-0 w-dvw max-w-2xl',
+          'mx-auto',
           'font-roboto-serif',
           'after:fixed after:top-0 after:z-10 after:mx-auto after:h-screen after:w-dvw after:max-w-2xl after:bg-[#D1F8EF]/50 after:content-[""]'
         )}
       >
-        <Cover />
+        <Cover setIsOpened={setIsOpened} />
         <div className='p-4'>
           <Greetings />
           <Moment url={Moment1} />
@@ -64,7 +70,7 @@ function App() {
         </div>
       </main>
       <Toaster />
-    </>
+    </AudioProvider>
   );
 }
 
