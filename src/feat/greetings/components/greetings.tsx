@@ -1,10 +1,9 @@
 import Rings from '@/assets/ring.png';
 import Frame from '@/components/frame';
-import type { ComponentProps } from 'react';
 
-export default function Greetings({ ...props }: ComponentProps<'section'>) {
+export default function Greetings() {
   return (
-    <Frame id='greetings' {...props}>
+    <Frame id='greetings'>
       <div className='flex flex-col items-center justify-center gap-4'>
         <img src={Rings} alt='Ring Image' className='w-1/2' />
         <span className='font-bold'>Assalamu'alaikum Wr Wb</span>

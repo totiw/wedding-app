@@ -7,7 +7,7 @@ interface SectionProps extends ComponentProps<'section'> {
   setIsOpened: React.Dispatch<boolean>;
 }
 
-export default function Cover({ setIsOpened, ...props }: SectionProps) {
+export default function Cover({ setIsOpened }: SectionProps) {
   const { play } = useAudio();
   const handleOpen = () => {
     play();
@@ -19,7 +19,7 @@ export default function Cover({ setIsOpened, ...props }: SectionProps) {
     });
   };
   return (
-    <Frame id='cover' {...props}>
+    <Frame id='cover'>
       <div className='flex h-[calc(80dvh)] flex-col justify-around'>
         <div className='flex flex-col items-center gap-4'>
           <span className='text-xl capitalize'>
