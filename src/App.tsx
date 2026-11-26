@@ -1,30 +1,31 @@
 import { cn } from 'cn';
 // COMPONENTS
-import Moment from './components/moment';
-import Couple from './feat/couple/components/couple';
-import Events from './feat/events/components/events';
-import Rsvp from './feat/rsvp/components/rsvp';
-import Maps from './feat/maps/components/maps';
-import Payment from './feat/payment/components/payment';
-import Cover from './feat/cover/components/cover';
-import Greetings from './feat/greetings/components/greetings';
-import Quotes from './feat/quotes/components/quotes';
+import Moment from '@/components/moment';
+import Couple from '@/feat/couple/components/couple';
+import Events from '@/feat/events/components/events';
+import Rsvp from '@/feat/rsvp/components/rsvp';
+import Maps from '@/feat/maps/components/maps';
+import Payment from '@/feat/payment/components/payment';
+import Cover from '@/feat/cover/components/cover';
+import Greetings from '@/feat/greetings/components/greetings';
+import Quotes from '@/feat/quotes/components/quotes';
+import Gallery from '@/feat/gallery/components/gallery';
+import Thanks from '@/feat/thanks/components/thanks';
+import Prewed from '@/feat/prewed/components/prewed';
 
 // ASSETS
 import PaperBG from '@/assets/paper-bg.jpeg';
 import Moment1 from '@/assets/moment1.webp';
 import Moment2 from '@/assets/moment2.webp';
-import Groom from '@/assets/groom.jpg';
-import Bride from '@/assets/bride.jpg';
+import Groom from '@/assets/groom.webp';
+import Bride from '@/assets/bride.webp';
 
 // DATA
 import CoupleData from '@/feat/couple/data.json';
 import EventData from '@/feat/events/data.json';
 import type { CoupleDTO } from '@/feat/couple/dto';
 import type { EventDTO } from '@/feat/events/dto';
-import Thanks from '@/feat/thanks/components/thanks';
 import { Toaster } from '@/components/ui/toast';
-import Prewed from '@/feat/prewed/components/prewed';
 import { AudioProvider } from '@/context/audio/audio.provider';
 import { useState } from 'react';
 
@@ -65,6 +66,7 @@ function App() {
         <Payment />
         <Quotes />
         <Prewed />
+        <Gallery />
         <Thanks />
       </main>
       <Toaster />
