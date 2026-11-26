@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { cn } from 'cn';
 // COMPONENTS
 import Moment from '@/components/moment';
@@ -12,6 +13,7 @@ import Quotes from '@/feat/quotes/components/quotes';
 import Gallery from '@/feat/gallery/components/gallery';
 import Thanks from '@/feat/thanks/components/thanks';
 import Prewed from '@/feat/prewed/components/prewed';
+import FloatingButton from '@/components/floating-btn';
 
 // ASSETS
 import PaperBG from '@/assets/paper-bg.jpeg';
@@ -27,7 +29,6 @@ import type { CoupleDTO } from '@/feat/couple/dto';
 import type { EventDTO } from '@/feat/events/dto';
 import { Toaster } from '@/components/ui/toast';
 import { AudioProvider } from '@/context/audio/audio.provider';
-import { useState } from 'react';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
@@ -52,6 +53,7 @@ function App() {
           'after:fixed after:top-0 after:z-10 after:mx-auto after:h-screen after:w-dvw after:max-w-2xl after:bg-[#D1F8EF]/50 after:content-[""]'
         )}
       >
+        <FloatingButton />
         <Cover setIsOpened={setIsOpened} />
         <Greetings />
         <Moment url={Moment1} />
