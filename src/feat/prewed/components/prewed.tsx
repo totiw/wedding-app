@@ -35,6 +35,7 @@ export default function Prewed() {
           if (!playerRef.current?.playVideo) return;
 
           if (entry.isIntersecting) {
+            playerRef.current.mute();
             playerRef.current.playVideo();
           } else {
             playerRef.current.pauseVideo();
