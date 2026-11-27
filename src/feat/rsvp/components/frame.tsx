@@ -1,4 +1,4 @@
-import Flower1 from '@/assets/flower1.png';
+import Flower1 from '@/assets/flower1.webp';
 import { cn } from 'cn';
 import type { ComponentProps } from 'react';
 import { motion } from 'motion/react';
