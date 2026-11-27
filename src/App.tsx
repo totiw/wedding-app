@@ -65,10 +65,10 @@ function App() {
         <Moment url={Moment1} />
         <Maps />
         <Rsvp />
-        <Payment />
         <Quotes />
-        <Prewed />
         <Gallery />
+        <Prewed />
+        <Payment />
         <Thanks />
       </main>
       <Toaster />

@@ -10,6 +10,8 @@ interface SectionProps extends ComponentProps<'section'> {
 }
 
 export default function Cover({ setIsOpened }: SectionProps) {
+  const searchParams = new URLSearchParams(window.location.search);
+  const guest = searchParams.get('guest');
   const { play } = useAudio();
   const handleOpen = () => {
     play();
@@ -31,7 +33,7 @@ export default function Cover({ setIsOpened }: SectionProps) {
           className='flex flex-col items-center gap-4'
         >
           <motion.span variants={item} className='text-xl capitalize'>
-            YOUR INVITED TO <br /> THE WEDDING OF
+            YOU'RE INVITED TO <br /> THE WEDDING OF
           </motion.span>
           <motion.span
             variants={item}
@@ -63,7 +65,7 @@ export default function Cover({ setIsOpened }: SectionProps) {
             Kepada Yth.
           </motion.span>
           <motion.span variants={item} className='text-primary text-2xl'>
-            Tamu & Partner
+            {guest || 'Tamu & Partner'}
           </motion.span>
           <motion.div variants={item}>
             <Button

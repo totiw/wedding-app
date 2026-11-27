@@ -7,7 +7,7 @@ import type { MediaDTO } from '@/feat/thanks/dto';
 import { useAudio } from '@/context/audio/use-audio';
 
 export default function Media({ data }: { data: MediaDTO }) {
-  const { imageUrl, name } = data;
+  const { name } = data;
   const { togglePlay, seek, audioRef, duration, isPlaying, currentTime } = useAudio();
   const skipTime = 5; //seconds
 
@@ -34,7 +34,7 @@ export default function Media({ data }: { data: MediaDTO }) {
   return (
     <div className='flex flex-col gap-4'>
       {/* COVER IMAGE */}
-      <div
+      {/* <div
         onClick={togglePlay}
         className='bg-primary mx-auto box-border flex h-40 w-40 rounded-full p-4'
       >
@@ -46,7 +46,7 @@ export default function Media({ data }: { data: MediaDTO }) {
             !isPlaying && 'paused'
           )}
         />
-      </div>
+      </div> */}
       {/* SONG NAME */}
       <div className='mx-auto w-48 overflow-hidden whitespace-nowrap'>
         <div className='animate-marquee w-fit'>{name}</div>
