@@ -28,6 +28,11 @@ export default function Prewed() {
           controls: 1,
           playsinline: 1,
         },
+        events: {
+          onReady: (event) => {
+            event.target.mute();
+          },
+        },
       });
 
       observer = new IntersectionObserver(
