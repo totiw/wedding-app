@@ -82,7 +82,7 @@ export default function FormRsvp({
           <Input
             id='field-name'
             className='border-primary bg-white'
-            placeholder='Haryono jati'
+            placeholder='Nama Anda'
             {...register('name', { required: 'Nama wajib diisi' })}
           />
         </Field>
