@@ -1,18 +1,21 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
+
 import { cn } from 'cn';
 // COMPONENTS
-import Moment from '@/components/moment';
-import Couple from '@/feat/couple/components/couple';
-import Events from '@/feat/events/components/events';
-import Rsvp from '@/feat/rsvp/components/rsvp';
-import Maps from '@/feat/maps/components/maps';
-import Payment from '@/feat/payment/components/payment';
 import Cover from '@/feat/cover/components/cover';
 import Greetings from '@/feat/greetings/components/greetings';
+
+const Moment = lazy(() => import('@/components/moment'));
+const Couple = lazy(() => import('@/feat/couple/components/couple'));
+const Gallery = lazy(() => import('@/feat/gallery/components/gallery'));
+const Prewed = lazy(() => import('@/feat/prewed/components/prewed'));
+
+import Events from '@/feat/events/components/events';
+import Maps from '@/feat/maps/components/maps';
+import Rsvp from '@/feat/rsvp/components/rsvp';
+import Payment from '@/feat/payment/components/payment';
 import Quotes from '@/feat/quotes/components/quotes';
-import Gallery from '@/feat/gallery/components/gallery';
 import Thanks from '@/feat/thanks/components/thanks';
-import Prewed from '@/feat/prewed/components/prewed';
 import FloatingButton from '@/components/floating-btn';
 
 // ASSETS
@@ -29,6 +32,7 @@ import type { CoupleDTO } from '@/feat/couple/dto';
 import type { EventDTO } from '@/feat/events/dto';
 import { Toaster } from '@/components/ui/toast';
 import { AudioProvider } from '@/context/audio/audio.provider';
+import { Spinner } from './components/ui/spinner';
 
 function App() {
   const groom_data: CoupleDTO = { ...CoupleData.groom, type: 'groom', imgUrl: Groom };
@@ -56,18 +60,26 @@ function App() {
         <FloatingButton />
         <Cover setIsOpened={setIsOpened} />
         <Greetings />
-        <Moment url={Moment1} />
-        <Couple data={groom_data} />
-        <Couple data={bride_data} />
-        <Moment url={Moment2} />
+
+        <Suspense fallback={<Spinner />}>
+          <Moment url={Moment1} />
+          <Couple data={groom_data} />
+          <Couple data={bride_data} />
+          <Moment url={Moment2} />
+        </Suspense>
+
         <Events data={marriage_data} />
         <Events data={reseption_data} />
         <Moment url={Moment1} />
         <Maps />
         <Rsvp />
         <Quotes />
-        <Gallery />
-        <Prewed />
+
+        <Suspense fallback={<Spinner />}>
+          <Gallery />
+          <Prewed />
+        </Suspense>
+
         <Payment />
         <Thanks />
       </main>

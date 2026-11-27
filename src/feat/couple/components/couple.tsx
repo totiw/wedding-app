@@ -18,6 +18,7 @@ export default function Couple({ data }: { data: CoupleDTO }) {
           src={data.imgUrl}
           alt='Couple Image'
           className='h-64 rounded-full shadow-lg shadow-gray-700/50'
+          loading='lazy'
         />
         <motion.span variants={item} className='font-monte-carlo text-primary text-6xl font-bold'>
           {data.nickname}
