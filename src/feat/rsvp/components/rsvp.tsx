@@ -50,7 +50,7 @@ export default function Rsvp() {
             {rsvps?.length > 0 ? (
               rsvps.map((rsvp: RsvpDTO) => <Card key={rsvp.id} data={rsvp} />)
             ) : (
-              <p>Silahkan kirim ucapan</p>
+              <p className='text-primary text-center'>Silahkan kirim ucapan</p>
             )}
           </div>
         </motion.div>
